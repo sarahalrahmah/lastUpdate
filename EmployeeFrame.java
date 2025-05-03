@@ -438,13 +438,13 @@ if (!security.equalsIgnoreCase("high") && !security.equalsIgnoreCase("medium") &
         return;
     }
     
-    // 3. تحويل ID إلى رقم يدوياً
+
     int id = 0;
     for (int i = 0; i < idText.length(); i++) {
         id = id * 10 + (idText.charAt(i) - '0');
     }
     
-    // 4. البحث عن الموظف (بدون استخدام findEmployee)
+
     Employee emp = null;
     for (int i = 0; i < MainClass.company.noE; i++) {
         if (MainClass.company.employeesList[i].getId() == id) {
@@ -452,15 +452,15 @@ if (!security.equalsIgnoreCase("high") && !security.equalsIgnoreCase("medium") &
             break;
         }
     }
-// 5. عرض النتائج كما في MainClass
+
     if (emp != null) {
-        // بناء النتيجة كما في display1EmployeeInfo
+        
         String result = "Employee Found:\n";
         result += "Name: " + emp.getName() + "\n";
         result += "ID: " + emp.getId() + "\n";
         result += "Salary: " + emp.getSalary() + "\n";
         
-        // تحديد المنصب كما في position()
+        //position()
         if (emp instanceof Manager) {
             result += "Position: Manager";
         } else if (emp instanceof Developer) {
